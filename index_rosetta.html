@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="http://libis-p-rosetta-3w.cc.kuleuven.be:80/m2/build/mirador/css/mirador-combined.css">
+    <title>Mirador Viewer</title>
+    <style type="text/css">
+        body { padding: 0; margin: 0; overflow: hidden; font-size: 70%; }
+        #viewer { background: #333 url(images/debut_dark.png) left top repeat; width: 100%; height: 100%; position: fixed; }
+		.user-logo li { padding-left: 10px;}
+		.user-logo .logo {
+			display:block;
+			width:128px;
+			height:33px;
+			opacity: 0.9;
+			background: url(images/TENEO_LOGO.png);
+			no-repeat 0 0;
+			background-size: 100% 100%;
+			}
+		.mirador-main-menu.user-logo { padding-top: 0; padding-bottom: 0;}
+		.visuallyhidden {
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 15x;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button3 {
+    background-color: white;
+    color: black;
+    border: 2px solid #f44336;
+}
+
+.button4 {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+
+.button5 {
+    background-color: #e0e0e0;
+    color: black;
+    border: 2px solid #555555;
+}
+
+  .ctrDropDown{
+    width:135px;
+}
+
+    .ctrDropDownIdentificatie{
+    width:450px;
+    align:left;
+}
+
+
+.ctrDropDownClick{
+    width: auto;
+
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-3.2.0.js"></script>
+    <script src="build/mirador/mirador.js"></script>
+
+  </head>
+<body>
+    <script type="text/javascript">
+//   var sruhost = "http://libis-p-rosetta-3w.cc.kuleuven.be:1801/delivery/sru?version=1.2&operation=searchRetrieve&query=";
+var sruhost = "http://services.libis.be/sru/delivery?version=1.2&operation=searchRetrieve&query=";
+    var startRecord = 1;
+    var aantal = 10;
+    var windowProxy1;
+    var zoektrefwoord;
+    var loadedIePid;
+    var myMiradorInstance;
+    var entiteit;
+$(document).ready(function()
+    {
+
+
+                                jQuery.noConflict();
+
+//                            jQuery.get('http://libis-p-rosetta-3w.cc.kuleuven.be:1801/delivery/sru?version=1.2&operation=explain',
+		              jQuery.get('http://services.libis.be/sru/delivery?version=1.2&operation=explain',
+                     function(d,s,x)
+                    {
+                        var poutput = [];
+                                                var searchName;
+                                                var targetToPushh = '<option selected="selected" value="Kies" title="Kies">Add term...</option>';
+                                                poutput.push(targetToPushh);
+                        jQuery(d).find('map').each(function(i,el){
+                                                searchName = jQuery(this).find('name').text();
+                                                if ((searchName.indexOf("IE.objectCharacteristics.creationDate") > -1) ||
+                                                        (searchName.indexOf("IE.dc.title") > -1) ||
+                                                        (searchName.indexOf("IE.dc.creator") > -1) ||
+                                                        (searchName.indexOf("IE.dc.description") > -1) ||
+                                                        (searchName.indexOf("FILE.generalFileCharacteristics.label") > -1) ||
+//                                                      (searchName.indexOf("IE.generalIECharacteristics.IEEntityType") > -1) ||
+                                                        (searchName.indexOf("IE.internalIdentifier.internalIdentifierType.PID") > -1))
+                                                {
+                                                        targetToPush = '<option value="';
+                                                        targetToPush += searchName;// key
+                                                        targetToPush += '" title="';
+                                                        targetToPush += searchName.substring(searchName.lastIndexOf(".")+1); // title 4 tooltip
+                                                        targetToPush += '">';
+                                                        targetToPush += searchName.substring(searchName.lastIndexOf(".")+1);// value
+                                                        targetToPush += '</option>';
+                                                        poutput.push(targetToPush);
+                                                }
+                    });
+                        $('#SRU_TREFWOORDENLIJST').html('');
+                        $('#SRU_TREFWOORDENLIJST').html(poutput.join(''));
+                    },
+                    'xml');
+
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+
+	loadedIePid = getQueryVariable("ie_pid");
+	entiteit = getQueryVariable("entiteit");
+	zoektrefwoord = 'IE.generalIECharacteristics.IEEntityType=' + entiteit;
+
+	myMiradorInstance = Mirador({
+			"id": "viewer",
+			"currentWorkspaceType": "singleObject",
+			"mainMenuSettings": {
+			  "show": true,
+			  "buttons": {
+				"bookmark": true,
+				"layout": true,
+				"fullScreenViewer": true
+			  },
+			  "userLogo": {
+				"label": "Teneo",
+				"attributes": {
+					"href": "http://www.lias.be/lias/teneo-opslag-preservatie",
+					"target": "_blank",
+					"class": "logo visuallyhidden focusable",
+				}
+			  }
+			},
+                        "data":[{ "manifestUri": "http://libis-p-rosetta-3w.cc.kuleuven.be:80/m2/manifest/"+loadedIePid+"manifest.json", "location": "LIBIS"}],
+                        "windowObjects": [{"loadedManifest": "http://libis-p-rosetta-3w.cc.kuleuven.be:80/m2/manifest/"+loadedIePid+"manifest.json","viewType" : "ImageView"}],
+         		"annotationEndpoint": { "name":"Local Storage", "module": "LocalStorageEndpoint" },
+         		"saveSession": true
+       	});
+	$('#sru_menu').hide();
+        myMiradorInstance.viewer.element.find('.mirador-viewer').height('100%');
+        ledig();
+        zoek(aantal);
+
+
+    	// handle subscribed events
+   	myMiradorInstance.viewer.eventEmitter.subscribe('manifestsPanelVisible.set', function(_, stateValue) {
+                if (stateValue) { $('#sru_menu').show();
+                        myMiradorInstance.viewer.element.find('.mirador-viewer').height('85%');
+                        return;
+                }
+                $('#sru_menu').hide();
+                myMiradorInstance.viewer.element.find('.mirador-viewer').height('100%');
+	});
+});
+
+function start_mirador() {
+     $("#viewer").attr("src","http://libis-p-rosetta-3w.cc.kuleuven.be:80/m2/index.html?ie_pid=IE404481&entiteit=BIBC_Lectio&dps_pid=IE404481");
+};
+function send_mirador() {
+	windowProxy1.post({'IE':'IE379240'});
+};
+function voeg_zoekcriterium_toe() {
+	var e = document.getElementById("SRU_TREFWOORDENLIJST");
+	var strURL = e.options[e.selectedIndex].value;
+	if (strURL != 'Kies') {
+		var zoek = $("#ZOEKURL").val();
+		if (zoek != "") {zoek = zoek + "&";}
+		zoek = zoek + strURL + "=";
+		$("#ZOEKURL").val(zoek);
+		$("#SRU_TREFWOORDENLIJST").val('Kies');
+		}
+};
+
+function verwijder_lijst() {
+	myMiradorInstance.viewer.state.currentConfig.manifests= [];
+  myMiradorInstance.viewer.element.find('.items-listing li').remove();
+}
+
+function volgende() {
+        verwijder_lijst();
+	startRecord = startRecord + aantal;
+	zoek(aantal);
+}
+
+function vorige() {
+	if (startRecord >= aantal) {
+                verwijder_lijst();
+		startRecord = startRecord - aantal;
+		zoek(aantal);
+	}
+}
+function ledig() {
+$("#ZOEKURL").val('');
+}
+
+
+function zoek_begin() {
+	verwijder_lijst();
+	startRecord = 1;
+	zoek(1);
+}
+
+function zoek(nrrec) {
+
+	if($("#ZOEKURL").val() == '') {
+		zoekquery = sruhost+ zoektrefwoord+"&startRecord="+startRecord+"&maximumRecords="+aantal;
+	} else {
+		zoekquery = sruhost+ $("#ZOEKURL").val() +"&"+ zoektrefwoord+"&startRecord="+startRecord+"&maximumRecords="+nrrec;
+	}
+jQuery.get(zoekquery,
+	function(d,s,x)
+	{
+		var ies = '[';
+
+		var x = d.childNodes[0];
+		var ieTitle='';
+		var iePid='';
+		var first = true;
+		var iePidAvailable = false;
+		for (i = 0; i <x.childNodes.length; i++) {
+		  // do something for each node
+			y = x.childNodes[i];
+			if (y.nodeType == 1) {
+				if (y.nodeName ==  "records") {
+					for (j = 0; j <y.childNodes.length;j++) {
+						z= y.childNodes[j];
+						if (z.nodeType == 1) {
+							if (z.nodeName ==  "record") {
+								for (k = 0; k<z.childNodes.length;k++) {
+									xx= z.childNodes[k];
+									if (xx.nodeType == 1) {
+										if (xx.nodeName ==  "recordData") {
+											for (l = 0; l <xx.childNodes.length;l++) {
+												yy= xx.childNodes[l];
+												if (yy.nodeType == 1) {
+													if (yy.nodeName ==  "dc:record") {
+														for (m = 0; m <yy.childNodes.length;m++) {
+															zz= yy.childNodes[m];
+															if (zz.nodeType == 1) {
+																if (zz.nodeName == "dc:title") {
+																	ieTitle = zz.innerHTML;
+																} else if (zz.nodeName == "dc:identifier") {
+																	if (zz.textContent.lastIndexOf('IE', 0) === 0) {
+																		iePid = zz.textContent;
+																		iePidAvailable = true;
+																		m = yy.childNodes.length;
+/*																	else if (zz.outerHTML.search('type="PID"') > -1) {
+																		iePid = zz.innerHTML;
+																		iePidAvailable = true;
+																		m = yy.childNodes.length;
+*/
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+					if (iePidAvailable == true) {
+						if (first == false)  {
+							ies = ies + ',';
+						} else {
+							first = false;
+						};
+						ies = ies + '{"IE": "' +iePid+'","title":"'+ieTitle+'" }';
+						myMiradorInstance.viewer.addManifestFromUrl( "http://libis-p-rosetta-3w.cc.kuleuven.be:80/m2/manifest/"+iePid +"manifest.json",ieTitle);
+					} else {
+						iePidAvailable = false;
+					}
+						}
+					}
+
+					}
+				}
+			}
+			ies = ies + ']';
+//	windowProxy1.post(ies);
+		},
+		'xml');
+	};
+
+    </script>
+
+  <div id="sru_menu">
+    <table width="100%">
+      <tbody>
+
+            <tr>
+              <td >
+                 <b>Query</b>
+              </td>
+              <td>
+                <input type ="text" size="200" style="text-align:left;margin-left:10px" id="ZOEKURL" name="ZOEKURL" rows="2" onfocus="$(this).css({'background-color': 'transparent'});">
+              </td>
+            </tr>
+
+      </tbody>
+    </table>c
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td width="40%">
+            <table>
+              <tr>
+                <td>
+                  <b>Search on:</b>
+                </td>
+                <td align="left">
+                  <table align="left" width="100%">
+                    <tbody>
+                      <tr>
+                        <td align="left" width="100%">
+                          <select style="width: 100%;"  id="SRU_TREFWOORDENLIJST" name="SRU_TREFWOORDENLIJST" size="1"  class="ctrDropDown" onBlur="this.className='ctrDropDown';" onMouseDown="this.className='ctrDropDownClick';" onchange="this.className='ctrDropDown';voeg_zoekcriterium_toe();" onfocus="$(this).css({'background-color': 'transparent'});";>
+
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td align="left">
+                  <table align="left">
+                    <tbody>
+                      <tr>
+                          <td align="left">
+                            <button class="button button5" onclick="ledig();" >
+                              Clear query<br/>
+                            </button>
+                          </td>
+                          <td align="left">
+                            <button class="button button5" onclick="zoek_begin();" >
+                              Search<br/>
+                            </button>
+                          </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+
+              </tr>
+             </table>
+          </td>
+          <td width="10%" valign="top">
+
+          </td>
+            <td width="30%" valign="top">
+                <table align="right">
+                  <tbody>
+                    <tr>
+                        <td align="right">
+                          <button class="button button5" onclick="vorige();" >
+                            Previous page
+                          </button>
+                        </td>
+                        <td align="right">
+                          <button class="button button5" onclick="volgende();" >
+                            Next page
+                          </button>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <table>
+    <tbody>
+      <div id="viewer"</div>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "http://localhost:3000/collection.json",
+  "@type": "sc:Collection",
+  "label": "Top Level Collection for Example Organization",
+  "manifests": 
+  [
+    {
+      "@id": "http://services.libis.be/m2/manifest/IE6674465manifest.json",
+      "@type": "sc:Manifest",
+      "label": "Observations on the disease of gonorrhoea :",
+      "thumbnail": {
+        "@id": "http://services.libis.be//iipsrv/iipsrv.fcgi?iiif=/operational_storage/storage1/2016/07/30/file_93/V1-FL6674739.jp2/full/!1024,1024/0/default.jpg",
+        "@type": "dctypes:Image",
+        "service": {
+          "@context": "http://iiif.io/api/image/2/context.json",
+          "@id": "http://services.libis.be//iipsrv/iipsrv.fcgi?iiif=/operational_storage/storage1/2016/07/30/file_93/V1-FL6674739.jp2",
+          "profile": "http://iiif.io/api/image/2/level1.json"
+        }
+      }
+    }
+  ]
+}

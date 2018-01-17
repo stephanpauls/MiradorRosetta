@@ -1,0 +1,399 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/manifest",
+  "@type": "sc:Manifest",
+  "label": "Physica",
+  "description": "Course notes for physics course taught by Franciscus Josephus Engelbert in 1739 at the University of Leuven. ",
+  "attribution": "",
+  "metadata": [
+    {
+      "label": "Author",
+      "value": "Gonzalez, Franciscus Josephus"
+    }
+  ],
+  "logo": "http://depot.lias.be:80/delivery/images/285228720/logo-main.png",
+  "license": "http://depot.lias.be:80/delivery/general/termsofuse.jsp?dps_dvs=1512577094602~271",
+  "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=IE10017903&dps_func=thumbnail",
+  "sequences": [
+    {
+      "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/sequence/REP10017904",
+      "@type": "sc:Sequence",
+      "label": "Table of Contents",
+      "viewingDirection": "left-to-right",
+      "viewingHint": "individuals",
+      "canvases": [
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017905",
+          "@type": "sc:Canvas",
+          "label": "Kaft",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017905&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017905",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017905.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017905.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017905"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017906",
+          "@type": "sc:Canvas",
+          "label": "Ex Libris",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017906&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017906",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017906.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017906.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017906"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017907",
+          "@type": "sc:Canvas",
+          "label": "Nota's",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017907&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017907",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017907.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017907.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017907"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017908",
+          "@type": "sc:Canvas",
+          "label": "Blanco",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017908&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017908",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017908.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017908.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017908"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017909",
+          "@type": "sc:Canvas",
+          "label": "Titelpagina",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017909&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017909",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017909.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017909.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017909"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017910",
+          "@type": "sc:Canvas",
+          "label": "Blanco",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017910&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017910",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017910.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017910.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017910"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017911",
+          "@type": "sc:Canvas",
+          "label": "Pagina 1",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017911&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017911",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017911.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017911.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017911"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017912",
+          "@type": "sc:Canvas",
+          "label": "Pagina 2",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017912&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017912",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017912.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017912.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017912"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017913",
+          "@type": "sc:Canvas",
+          "label": "Pagina 3",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017913&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017913",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017913.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017913.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017913"
+            }
+          ]
+        },
+        {
+          "@context": "http://iiif.io/api/presentation/2/context.json",
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017914",
+          "@type": "sc:Canvas",
+          "label": "Pagina 4",
+          "thumbnail": "http://depot.lias.be:80/delivery/DeliveryManagerServlet?dps_pid=FL10017914&dps_func=thumbnail",
+          "height": 3802,
+          "width": 3228,
+          "images": [
+            {
+              "@context": "http://iiif.io/api/presentation/2/context.json",
+              "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/annotation/FL10017914",
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/res/FL10017914.TIF",
+                "@type": "dctypes:Image",
+                "format": "image/tiff",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "http://depot.lias.be:80/cantaloupe/iiif/2/1512577094602~271:FL10017914.TIF",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                },
+                "height": 3802,
+                "width": 3228
+              },
+              "on": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017914"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "structures": [
+    {
+      "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/range/REP10017904",
+      "@type": "sc:Range",
+      "label": "Table of Contents",
+      "canvases": [
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017905",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017906",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017907",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017908",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017909",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017910",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017911",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017912",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017913",
+        "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017914"
+      ],
+      "members": [
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017905",
+          "@type": "sc:Canvas",
+          "label": "Kaft"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017906",
+          "@type": "sc:Canvas",
+          "label": "Ex Libris"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017907",
+          "@type": "sc:Canvas",
+          "label": "Nota's"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017908",
+          "@type": "sc:Canvas",
+          "label": "Blanco pagina"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017909",
+          "@type": "sc:Canvas",
+          "label": "Titelpagina"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017910",
+          "@type": "sc:Canvas",
+          "label": "Blanco pagina"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017911",
+          "@type": "sc:Canvas",
+          "label": "Pagina 1"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017912",
+          "@type": "sc:Canvas",
+          "label": "Pagina 2"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017913",
+          "@type": "sc:Canvas",
+          "label": "Pagina 3"
+        },
+        {
+          "@id": "http://depot.lias.be:80/delivery/iiif/presentation/2.1/IE10017903/canvas/FL10017914",
+          "@type": "sc:Canvas",
+          "label": "Pagina 4"
+        }
+      ]
+    }
+  ]
+}
